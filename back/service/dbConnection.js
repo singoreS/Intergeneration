@@ -9,3 +9,4 @@ const dbConnection = await mysql.createConnection({
 });
 
 export default dbConnection;
+

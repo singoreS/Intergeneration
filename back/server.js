@@ -19,7 +19,7 @@ router.use(express.json());
 // autoriser les serveurs à dialoguer avec l'API
 router.use(
 	cors({
-		origin: ["http://127.0.0.1:5173","http://localhost:5173", "http://localhost:3000"],
+		origin: ["http://127.0.0.1:5173","http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:4173/", "http://localhost:4173/"],
 	}),
 );
 
@@ -28,9 +28,7 @@ router.use("/programme", programmeRouter);
 router.use("/responsable", responsableRouter);
 router.use("/user", userRoute);
 
-
 // router.get("/", (req, res) => res.send("singore"));
-
 
 const server = http.createServer(app);
 
