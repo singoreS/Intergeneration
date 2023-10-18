@@ -91,7 +91,7 @@ programmeRouter.post("/create", async (req, res) => {
 		const [results] = await dbConnection.execute(query, req.body);
 		return res.status(200).json({
 			status: 200,
-			message: "OK",
+			message: "Programme Crée",
 		});
 	} catch (error) {
 		// renvoyer une erreur
@@ -136,7 +136,7 @@ programmeRouter.put("/update", async (req, res) => {
 });
 
 
-programmeRouter.delete("/delete", async (req, res) => {
+programmeRouter.delete("/delete/:id", async (req, res) => {
 	// requête
 	const query = `
 		DELETE FROM Intergen.programme
@@ -150,10 +150,10 @@ programmeRouter.delete("/delete", async (req, res) => {
 	*/
 
 	try {
-		const [results] = await dbConnection.execute(query, req.body);
+		const [results] = await dbConnection.execute(query, req.params);
 		return res.status(200).json({
 			status: 200,
-			message: "OK",
+			message: "Programme supprimé",
 		});
 	} catch (error) {
 		// renvoyer une erreur

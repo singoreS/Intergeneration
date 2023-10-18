@@ -43,7 +43,7 @@ userRoute.post("/register", async (req, res) => {
 	console.log(bodyHashed);
 	const query = `
 		INSERT INTO Intergen.user
-		VALUES (NULL, :firstname, :lastname, :email, :adress_postal, :telephone, :password, 2);
+		VALUES (NULL, :firstname, :lastname, :email, :adress_postal, :telephone, :password, 1);
 	`;
 	
 
